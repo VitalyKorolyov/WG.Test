@@ -4,7 +4,9 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
+using WG.Test.BLL.Services;
 using WG.Test.Data;
+using WG.Test.Data.Repositories;
 
 namespace WG.Test.Api
 {
@@ -29,6 +31,9 @@ namespace WG.Test.Api
             services.AddDbContext<ApplicationContext>(options =>options.UseSqlServer(connectionString));
 
             services.AddMvc();
+
+            services.AddTransient<IEmployeesService, EmployeesService>();
+            services.AddTransient<IEmployeesRepository, EmployeesRepository>();
         }
 
         public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory)
