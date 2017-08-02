@@ -1,0 +1,11 @@
+.vs/
+WG.Test.Web/obj/
+WG.Test.Web/bin/Debug/
+WG.Test.Api/obj/
+WG.Test.Api/bin/Debug/netcoreapp1.1/
+WG.Test.Web/Properties/launchSettings.json
+packages/
+WG.Test.DAL/bin/Debug/
+WG.Test.BLL/bin/Debug/
+WG.Test.DAL/obj/
+WG.Test.BLL/obj/
