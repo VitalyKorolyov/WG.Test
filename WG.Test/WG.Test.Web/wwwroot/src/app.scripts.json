@@ -1,0 +1,15 @@
+﻿{
+  "preBuild": [
+    "angular",
+    "angular-resource",
+    "angular-sanitize",
+    "angular-ui-router"
+  ],
+
+  "paths": {
+    "angular": "lib/angular/angular.min.js",
+    "angular-resource": "lib/angular-resource/angular-resource.min.js",
+    "angular-sanitize": "lib/angular-sanitize/angular-sanitize.min.js",
+    "angular-ui-router": "lib/angular-ui-router/release/angular-ui-router.min.js"
+  }
+}

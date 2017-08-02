@@ -9,3 +9,6 @@ WG.Test.Data/bin/Debug/
 WG.Test.BLL/bin/Debug/
 WG.Test.Data/obj/
 WG.Test.BLL/obj/
+WG.Test.Web/wwwroot/node_modules
+WG.Test.Web/wwwroot/src/lib
+WG.Test.Web/wwwroot/src/build
