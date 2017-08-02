@@ -1,10 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace WG.Test.BLL.Models
+﻿namespace WG.Test.BLL.Models
 {
     public class ManagerModel
     {
+        public int Id { get; set; }
+        public string FirstName { get; set; }
+        public string Surname { get; set; }
+        public string MiddleName { get; set; }
     }
 }

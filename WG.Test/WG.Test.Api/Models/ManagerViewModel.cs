@@ -1,11 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-
-namespace WG.Test.Api.Models
+﻿namespace WG.Test.Api.Models
 {
     public class ManagerViewModel
     {
+        public int Id { get; set; }
+        public string FirstName { get; set; }
+        public string Surname { get; set; }
+        public string MiddleName { get; set; }
     }
 }

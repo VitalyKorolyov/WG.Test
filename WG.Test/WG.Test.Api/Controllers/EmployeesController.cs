@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Threading.Tasks;
+using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
 using WG.Test.Api.Models;
 using WG.Test.BLL.Services;
@@ -9,18 +10,21 @@ namespace WG.Test.Api.Controllers
     [Route("api/[controller]")]
     public class EmployeesController : Controller
     {
-        private readonly IEmployeesService _employeeService;
+        private readonly IMapper _mapper;
+        private readonly IEmployeesService _employeesService;
 
-        public EmployeesController(IEmployeesService employeeService)
+        public EmployeesController(IEmployeesService employeesService, IMapper mapper)
         {
-            _employeeService = employeeService;
+            _employeesService = employeesService;
+            _mapper = mapper;
         }
 
         [HttpGet]
         public async Task<List<EmployeeViewModel>> Get()
         {
-            var emp = await _employeeService.GetAsync();
-            return new List<EmployeeViewModel>();
+            var employees = await _employeesService.GetAsync();
+
+            return _mapper.Map<List<EmployeeViewModel>>(employees);
         }
 
         [HttpGet("{id}")]
