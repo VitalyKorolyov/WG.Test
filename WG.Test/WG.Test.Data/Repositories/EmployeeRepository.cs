@@ -1,7 +1,8 @@
 ﻿using System.Collections.Generic;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
-using WG.Test.Data.Entities;
+using WG.Test.BusinessEntities.Entities;
+using WG.Test.IData.Interfaces;
 
 namespace WG.Test.Data.Repositories
 {

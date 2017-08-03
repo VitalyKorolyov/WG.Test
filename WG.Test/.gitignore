@@ -12,3 +12,9 @@ WG.Test.BLL/obj/
 WG.Test.Web/node_modules
 WG.Test.Web/wwwroot/lib
 WG.Test.Web/wwwroot/build
+WG.Test.IData/obj/
+WG.Test.IData/bin/Debug/netcoreapp1.1/
+WG.Test.IBLL/obj/
+WG.Test.IBLL/bin/Debug/netcoreapp1.1/
+WG.Test.BusinessEntities/obj/
+WG.Test.BusinessEntities/bin/Debug/netcoreapp1.1/

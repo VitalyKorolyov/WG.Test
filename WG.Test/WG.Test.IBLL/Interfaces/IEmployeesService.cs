@@ -1,10 +1,10 @@
 ﻿using System.Collections.Generic;
 using System.Threading.Tasks;
-using WG.Test.Data.Entities;
+using WG.Test.BusinessEntities.Entities;
 
-namespace WG.Test.Data.Repositories
+namespace WG.Test.IBLL.Interfaces
 {
-    public interface IEmployeesRepository
+    public interface IEmployeesService
     {
         Task<List<Employee>> GetAsync();
     }

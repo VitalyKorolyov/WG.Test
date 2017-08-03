@@ -1,6 +1,6 @@
-﻿namespace WG.Test.BLL.Models
+﻿namespace WG.Test.BusinessEntities.Entities
 {
-    public class EmployeeModel
+    public class Employee
     {
         public int Id { get; set; }
         public string FirstName { get; set; }
@@ -10,6 +10,6 @@
         public string Department { get; set; }
 
         public int ManagerId { get; set; }
-        public ManagerModel Manager { get; set; }
+        public Manager Manager { get; set; }
     }
 }

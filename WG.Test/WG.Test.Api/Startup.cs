@@ -1,14 +1,9 @@
-﻿using AutoMapper;
-using Microsoft.AspNetCore.Builder;
+﻿using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
-using WG.Test.Api.AutoMapper;
-using WG.Test.BLL.Services;
-using WG.Test.Data;
-using WG.Test.Data.Repositories;
+using WG.Test.Api.Extensions;
 
 namespace WG.Test.Api
 {
@@ -30,15 +25,11 @@ namespace WG.Test.Api
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc();
-            var config = new MapperConfiguration(cfg => { cfg.AddProfile(new AutoMapperProfileConfiguration()); });
-            var mapper = config.CreateMapper();
 
             var connectionString = Configuration.GetConnectionString("DefaultConnection");
-            services.AddDbContext<ApplicationContext>(options => options.UseSqlServer(connectionString));
+            services.ConfigureDb(connectionString);
 
-            services.AddSingleton(mapper);
-            services.AddTransient<IEmployeesService, EmployeesService>();
-            services.AddTransient<IEmployeesRepository, EmployeesRepository>();
+            services.ConfigureDi();
         }
 
         public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory)

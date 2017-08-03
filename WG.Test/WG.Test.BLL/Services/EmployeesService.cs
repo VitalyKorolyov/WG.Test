@@ -1,8 +1,9 @@
 ﻿using System.Collections.Generic;
 using System.Threading.Tasks;
 using AutoMapper;
-using WG.Test.BLL.Models;
-using WG.Test.Data.Repositories;
+using WG.Test.BusinessEntities.Entities;
+using WG.Test.IBLL.Interfaces;
+using WG.Test.IData.Interfaces;
 
 namespace WG.Test.BLL.Services
 {
@@ -17,11 +18,11 @@ namespace WG.Test.BLL.Services
             _mapper = mapper;
         }
 
-        public async Task<List<EmployeeModel>> GetAsync()
+        public async Task<List<Employee>> GetAsync()
         {
             var employees = await _employeeRepository.GetAsync();
 
-            return _mapper.Map<List<EmployeeModel>>(employees);
+            return _mapper.Map<List<Employee>>(employees);
         }
     }
 }

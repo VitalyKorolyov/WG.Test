@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace WG.Test.Data.Entities
+namespace WG.Test.BusinessEntities.Entities
 {
     public class Manager
     {

@@ -4,6 +4,7 @@ using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
 using WG.Test.Api.Models;
 using WG.Test.BLL.Services;
+using WG.Test.IBLL.Interfaces;
 
 namespace WG.Test.Api.Controllers
 {

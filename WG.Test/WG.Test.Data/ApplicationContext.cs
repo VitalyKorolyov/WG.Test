@@ -1,5 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using WG.Test.Data.Entities;
+using WG.Test.BusinessEntities.Entities;
 
 namespace WG.Test.Data
 {
