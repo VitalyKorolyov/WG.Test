@@ -1,7 +1,0 @@
-D:\git\test\WG.Test\WG.Test.Migrations\bin\Debug\netcoreapp1.1\WG.Test.Migrations.deps.json
-D:\git\test\WG.Test\WG.Test.Migrations\bin\Debug\netcoreapp1.1\WG.Test.Migrations.dll
-D:\git\test\WG.Test\WG.Test.Migrations\bin\Debug\netcoreapp1.1\WG.Test.Migrations.pdb
-D:\git\test\WG.Test\WG.Test.Migrations\obj\Debug\netcoreapp1.1\WG.Test.Migrations.csprojResolveAssemblyReference.cache
-D:\git\test\WG.Test\WG.Test.Migrations\obj\Debug\netcoreapp1.1\WG.Test.Migrations.AssemblyInfo.cs
-D:\git\test\WG.Test\WG.Test.Migrations\obj\Debug\netcoreapp1.1\WG.Test.Migrations.dll
-D:\git\test\WG.Test\WG.Test.Migrations\obj\Debug\netcoreapp1.1\WG.Test.Migrations.pdb
