@@ -22,6 +22,7 @@
     </Content>
     <Content Include="wwwroot\app\managers\views\managers.html" />
     <Content Include="wwwroot\app\services\employeesService.js" />
+    <Content Include="wwwroot\app\services\managersService.js" />
     <Content Include="wwwroot\build\app.js" />
     <Content Include="wwwroot\build\vendor.js" />
     <Content Include="wwwroot\index.html" />

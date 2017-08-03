@@ -25,6 +25,8 @@ namespace WG.Test.Api.Extensions
             services.AddSingleton(mapper);
             services.AddTransient<IEmployeesService, EmployeesService>();
             services.AddTransient<IEmployeesRepository, EmployeesRepository>();
+            services.AddTransient<IManagersService, ManagersService>();
+            services.AddTransient<IManagersRepository, ManagersRepository>();
         }
     }
 }
