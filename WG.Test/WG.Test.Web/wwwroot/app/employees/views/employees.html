@@ -13,6 +13,7 @@
                 <th>Department</th>
                 <th>Manager</th>
                 <th></th>
+                <th></th>
             </tr>
             </thead>
             <tbody>
@@ -22,7 +23,15 @@
                 <td>{{employee.middleName}}</td>
                 <td>{{employee.position}}</td>
                 <td>{{employee.department}}</td>
-                <td>{{employee.manager.firstName}} {{employee.manager.surname}}</td>
+                <td>
+                    <div>
+                        <select ng-model="employee.managerId" ng-init="employee.managerId = employee.managerId.toString()">
+                            <option value="">---Please select---</option>
+                            <option ng-repeat="manager in employeesCtrl.managers" value="{{manager.id}}">{{manager.firstName}} {{manager.surname}}</option>
+                        </select>
+                    </div>
+                </td>
+                <th><button type="button" ng-click="employeesCtrl.update($index)" class="btn btn-default btn-sm">Save</button></th>
                 <th><button type="button" ng-click="employeesCtrl.delete(employee.id, $index)" class="btn btn-danger btn-sm">Delete</button></th>
             </tr>
             </tbody>

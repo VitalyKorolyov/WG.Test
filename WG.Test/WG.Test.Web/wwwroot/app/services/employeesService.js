@@ -13,6 +13,11 @@ angular.module('app').service('employeesService', ['http', function (http) {
         return http.post(url, model);
     }
 
+    self.update = function (model) {
+        var url = 'employees/update/';
+        return http.post(url, model);
+    }
+
     self.delete = function (id) {
         var url = 'employees/delete/' + id;
         return http.delete(url);

@@ -23,19 +23,33 @@ namespace WG.Test.Api.Controllers
         }
 
         [HttpGet]
-        public async Task<List<EmployeeViewModel>> Get()
+        public async Task<List<EmployeeModel>> Get()
         {
             var employees = await _employeeService.GetAsync();
 
-            return _mapper.Map<List<EmployeeViewModel>>(employees);
+            return _mapper.Map<List<EmployeeModel>>(employees);
         }
 
         [HttpPost("create")]
-        public async Task<IActionResult> Create([FromBody]EmployeeViewModel model)
+        public async Task<IActionResult> Create([FromBody]EmployeeModel model)
         {
             var employee = _mapper.Map<Employee>(model);
 
             var isSuccess = await _employeeService.CreateAsync(employee);
+            if (isSuccess)
+            {
+                return new OkResult();
+            }
+
+            return new BadRequestResult();
+        }
+
+        [HttpPost("update")]
+        public async Task<IActionResult> Update([FromBody]EmployeeModel model)
+        {
+            var employee = _mapper.Map<Employee>(model);
+
+            var isSuccess = await _employeeService.UpdateAsync(employee);
             if (isSuccess)
             {
                 return new OkResult();

@@ -1,6 +1,6 @@
 ﻿namespace WG.Test.Api.Models
 {
-    public class ManagerViewModel
+    public class ManagerModel
     {
         public int Id { get; set; }
         public string FirstName { get; set; }

@@ -25,6 +25,11 @@ namespace WG.Test.BLL.Services
             return await _employeeRepository.CreateAsync(employee);
         }
 
+        public async Task<bool> UpdateAsync(Employee employee)
+        {
+            return await _employeeRepository.UpdateAsync(employee);
+        }
+
         public async Task<bool> DeleteAsync(int id)
         {
             return await _employeeRepository.DeleteAsync(id);

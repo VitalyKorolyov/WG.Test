@@ -8,6 +8,7 @@ namespace WG.Test.IBLL.Interfaces
     {
         Task<List<Employee>> GetAsync();
         Task<bool> CreateAsync(Employee employee);
+        Task<bool> UpdateAsync(Employee employee);
         Task<bool> DeleteAsync(int id);
     }
 }

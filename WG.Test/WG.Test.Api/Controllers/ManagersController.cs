@@ -23,14 +23,14 @@ namespace WG.Test.Api.Controllers
         }
 
         [HttpGet]
-        public async Task<List<ManagerViewModel>> Get()
+        public async Task<List<ManagerModel>> Get()
         {
             var managers = await _managerService.GetAsync();
-            return _mapper.Map<List<ManagerViewModel>>(managers);
+            return _mapper.Map<List<ManagerModel>>(managers);
         }
 
         [HttpPost("create")]
-        public async Task<IActionResult> Create([FromBody]ManagerViewModel model)
+        public async Task<IActionResult> Create([FromBody]ManagerModel model)
         {
             var manager = _mapper.Map<Manager>(model);
 

@@ -28,6 +28,14 @@ namespace WG.Test.Data.Repositories
             return number != 0;
         }
 
+        public async Task<bool> UpdateAsync(Employee employee)
+        {
+            _dbContext.Entry(employee).State = EntityState.Modified;
+            var number = await _dbContext.SaveChangesAsync();
+
+            return number != 0;
+        }
+
         public async Task<bool> DeleteAsync(int id)
         {
             var employee = new Employee { Id = id };

@@ -12,10 +12,10 @@ namespace WG.Test.Api.AutoMapper
 
         protected AutoMapperProfileConfiguration(string profileName) :base(profileName)
         {
-            CreateMap<Employee, EmployeeViewModel>();
-            CreateMap<Manager, ManagerViewModel>();
-            CreateMap<ManagerViewModel, Manager>();
-            CreateMap<EmployeeViewModel, Employee>();
+            CreateMap<Employee, EmployeeModel>();
+            CreateMap<Manager, ManagerModel>();
+            CreateMap<ManagerModel, Manager>();
+            CreateMap<EmployeeModel, Employee>();
         }
     }
 }
