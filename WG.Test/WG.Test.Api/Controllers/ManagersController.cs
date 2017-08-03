@@ -14,18 +14,18 @@ namespace WG.Test.Api.Controllers
     public class ManagersController : Controller
     {
         private readonly IMapper _mapper;
-        private readonly IManagersService _managersService;
+        private readonly IManagerService _managerService;
 
-        public ManagersController(IMapper mapper, IManagersService managersService)
+        public ManagersController(IMapper mapper, IManagerService managerService)
         {
             _mapper = mapper;
-            _managersService = managersService;
+            _managerService = managerService;
         }
 
         [HttpGet]
         public async Task<List<ManagerViewModel>> Get()
         {
-            var managers = await _managersService.GetAsync();
+            var managers = await _managerService.GetAsync();
             return _mapper.Map<List<ManagerViewModel>>(managers);
         }
 
@@ -34,7 +34,7 @@ namespace WG.Test.Api.Controllers
         {
             var manager = _mapper.Map<Manager>(model);
 
-            var isSuccess = await _managersService.CreateAsync(manager);
+            var isSuccess = await _managerService.CreateAsync(manager);
             if(isSuccess)
             {
                 return new OkResult();
@@ -46,7 +46,7 @@ namespace WG.Test.Api.Controllers
         [HttpDelete("delete/{id}")]
         public async Task<IActionResult> Delete(int id)
         {
-            var isSuccess = await _managersService.DeleteAsync(id);
+            var isSuccess = await _managerService.DeleteAsync(id);
             if (isSuccess)
             {
                 return new OkResult();

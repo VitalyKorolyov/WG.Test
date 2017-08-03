@@ -23,7 +23,7 @@
                 <td>{{employee.position}}</td>
                 <td>{{employee.department}}</td>
                 <td>{{employee.manager.firstName}} {{employee.manager.surname}}</td>
-                <th><button type="button" class="btn btn-danger btn-sm">Delete</button></th>
+                <th><button type="button" ng-click="employeesCtrl.delete(employee.id, $index)" class="btn btn-danger btn-sm">Delete</button></th>
             </tr>
             </tbody>
         </table>

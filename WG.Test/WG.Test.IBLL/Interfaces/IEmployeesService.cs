@@ -4,9 +4,10 @@ using WG.Test.BusinessEntities.Entities;
 
 namespace WG.Test.IBLL.Interfaces
 {
-    public interface IEmployeesService
+    public interface IEmployeeService
     {
         Task<List<Employee>> GetAsync();
         Task<bool> CreateAsync(Employee employee);
+        Task<bool> DeleteAsync(int id);
     }
 }

@@ -22,6 +22,13 @@
         <label>Department:</label>
         <input ng-model="createEmployeeCtrl.employee.department" type="text" class="form-control">
     </div>
+    <div class="col-md-3" style="margin-top: 30px">
+        <label>Manager:</label>
+        <select ng-model="createEmployeeCtrl.employee.managerId">
+            <option value="">---Please select---</option>
+            <option ng-repeat="manager in createEmployeeCtrl.managers" value="{{manager.id}}">{{manager.firstName}} {{manager.surname}}</option>
+        </select>
+    </div>
     <div class="col-md-12">
         <button type="submit" ng-click="createEmployeeCtrl.create()" class="btn btn-default">Submit</button>
     </div>

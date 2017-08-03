@@ -6,11 +6,11 @@ using WG.Test.IData.Interfaces;
 
 namespace WG.Test.BLL.Services
 {
-    public class EmployeesService :IEmployeesService
+    public class EmployeeService :IEmployeeService
     {
-        private readonly IEmployeesRepository _employeeRepository;
+        private readonly IEmployeeRepository _employeeRepository;
 
-        public EmployeesService(IEmployeesRepository employeeRepository)
+        public EmployeeService(IEmployeeRepository employeeRepository)
         {
             _employeeRepository = employeeRepository;
         }
@@ -23,6 +23,11 @@ namespace WG.Test.BLL.Services
         public async Task<bool> CreateAsync(Employee employee)
         {
             return await _employeeRepository.CreateAsync(employee);
+        }
+
+        public async Task<bool> DeleteAsync(int id)
+        {
+            return await _employeeRepository.DeleteAsync(id);
         }
     }
 }

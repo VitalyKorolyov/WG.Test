@@ -23,10 +23,10 @@ namespace WG.Test.Api.Extensions
             var mapper = config.CreateMapper();
 
             services.AddSingleton(mapper);
-            services.AddTransient<IEmployeesService, EmployeesService>();
-            services.AddTransient<IEmployeesRepository, EmployeesRepository>();
-            services.AddTransient<IManagersService, ManagersService>();
-            services.AddTransient<IManagersRepository, ManagersRepository>();
+            services.AddTransient<IEmployeeService, EmployeeService>();
+            services.AddTransient<IEmployeeRepository, EmployeeRepository>();
+            services.AddTransient<IManagerService, ManagerService>();
+            services.AddTransient<IManagerRepository, ManagerRepository>();
         }
     }
 }

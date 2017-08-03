@@ -11,4 +11,10 @@ angular.module('employees').controller('employeesController', ["$state", "employ
         ctrl.create = function() {
             $state.go('employees.create');
         }
+
+        ctrl.delete = function (id, index) {
+            employeesService.delete(id).then(function () {
+                ctrl.employees.splice(index, 1);
+            });
+        }
     }]);

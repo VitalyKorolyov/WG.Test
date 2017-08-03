@@ -4,7 +4,7 @@ using WG.Test.BusinessEntities.Entities;
 
 namespace WG.Test.IData.Interfaces
 {
-    public interface IManagersRepository
+    public interface IManagerRepository
     {
         Task<List<Manager>> GetAsync();
         Task<bool> CreateAsync(Manager manager);

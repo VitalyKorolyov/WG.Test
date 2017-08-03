@@ -6,28 +6,28 @@ using WG.Test.IData.Interfaces;
 
 namespace WG.Test.BLL.Services
 {
-    public class ManagersService :IManagersService
+    public class ManagerService :IManagerService
     {
-        private readonly IManagersRepository _managersRepository;
+        private readonly IManagerRepository _managerRepository;
 
-        public ManagersService(IManagersRepository managersRepository)
+        public ManagerService(IManagerRepository managerRepository)
         {
-            _managersRepository = managersRepository;
+            _managerRepository = managerRepository;
         }
 
         public async Task<List<Manager>> GetAsync()
         {
-            return await _managersRepository.GetAsync();
+            return await _managerRepository.GetAsync();
         }
 
         public async Task<bool> CreateAsync(Manager manager)
         {
-            return await _managersRepository.CreateAsync(manager);
+            return await _managerRepository.CreateAsync(manager);
         }
 
         public async Task<bool> DeleteAsync(int id)
         {
-            return await _managersRepository.DeleteAsync(id);
+            return await _managerRepository.DeleteAsync(id);
         }
     }
 }

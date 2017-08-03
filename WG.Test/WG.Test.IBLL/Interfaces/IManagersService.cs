@@ -4,7 +4,7 @@ using WG.Test.BusinessEntities.Entities;
 
 namespace WG.Test.IBLL.Interfaces
 {
-    public interface IManagersService
+    public interface IManagerService
     {
         Task<List<Manager>> GetAsync();
         Task<bool> CreateAsync(Manager manager);

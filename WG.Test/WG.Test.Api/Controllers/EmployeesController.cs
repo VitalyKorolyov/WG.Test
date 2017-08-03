@@ -14,26 +14,20 @@ namespace WG.Test.Api.Controllers
     public class EmployeesController : Controller
     {
         private readonly IMapper _mapper;
-        private readonly IEmployeesService _employeesService;
+        private readonly IEmployeeService _employeeService;
 
-        public EmployeesController(IEmployeesService employeesService, IMapper mapper)
+        public EmployeesController(IEmployeeService employeeService, IMapper mapper)
         {
-            _employeesService = employeesService;
+            _employeeService = employeeService;
             _mapper = mapper;
         }
 
         [HttpGet]
         public async Task<List<EmployeeViewModel>> Get()
         {
-            var employees = await _employeesService.GetAsync();
+            var employees = await _employeeService.GetAsync();
 
             return _mapper.Map<List<EmployeeViewModel>>(employees);
-        }
-
-        [HttpGet("{id}")]
-        public string GetById(int id)
-        {
-            return "value";
         }
 
         [HttpPost("create")]
@@ -41,7 +35,7 @@ namespace WG.Test.Api.Controllers
         {
             var employee = _mapper.Map<Employee>(model);
 
-            var isSuccess = await _employeesService.CreateAsync(employee);
+            var isSuccess = await _employeeService.CreateAsync(employee);
             if (isSuccess)
             {
                 return new OkResult();
@@ -50,14 +44,16 @@ namespace WG.Test.Api.Controllers
             return new BadRequestResult();
         }
 
-        [HttpPost("{id}")]
-        public void Update(int id, [FromBody]string value)
+        [HttpDelete("delete/{id}")]
+        public async Task<IActionResult> Delete(int id)
         {
-        }
+            var isSuccess = await _employeeService.DeleteAsync(id);
+            if (isSuccess)
+            {
+                return new OkResult();
+            }
 
-        [HttpDelete("{id}")]
-        public void Delete(int id)
-        {
+            return new BadRequestResult();
         }
     }
 }

@@ -7,11 +7,11 @@ using WG.Test.IData.Interfaces;
 
 namespace WG.Test.Data.Repositories
 {
-    public class ManagersRepository :IManagersRepository
+    public class ManagerRepository :IManagerRepository
     {
         private readonly ApplicationContext _dbContext;
 
-        public ManagersRepository(ApplicationContext dbContext)
+        public ManagerRepository(ApplicationContext dbContext)
         {
             _dbContext = dbContext;
         }

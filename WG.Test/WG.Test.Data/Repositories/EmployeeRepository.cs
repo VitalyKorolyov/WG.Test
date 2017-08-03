@@ -7,11 +7,11 @@ using WG.Test.IData.Interfaces;
 
 namespace WG.Test.Data.Repositories
 {
-    public class EmployeesRepository : IEmployeesRepository
+    public class EmployeeRepository : IEmployeeRepository
     {
         private readonly ApplicationContext _dbContext;
 
-        public EmployeesRepository(ApplicationContext dbContext)
+        public EmployeeRepository(ApplicationContext dbContext)
         {
             _dbContext = dbContext;
         }
@@ -23,6 +23,16 @@ namespace WG.Test.Data.Repositories
         public async Task<bool> CreateAsync(Employee employee)
         {
             await _dbContext.Employees.AddAsync(employee);
+            var number = await _dbContext.SaveChangesAsync();
+
+            return number != 0;
+        }
+
+        public async Task<bool> DeleteAsync(int id)
+        {
+            var employee = new Employee { Id = id };
+            _dbContext.Entry(employee).State = EntityState.Deleted;
+
             var number = await _dbContext.SaveChangesAsync();
 
             return number != 0;

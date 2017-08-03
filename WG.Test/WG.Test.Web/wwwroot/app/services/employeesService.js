@@ -12,4 +12,9 @@ angular.module('app').service('employeesService', ['http', function (http) {
         var url = 'employees/create';
         return http.post(url, model);
     }
+
+    self.delete = function (id) {
+        var url = 'employees/delete/' + id;
+        return http.delete(url);
+    }
 }]);
