@@ -8,12 +8,6 @@ angular.module('employees', ['ui.router'])
                 templateUrl: 'app/employees/views/employees.html',
                 controller: 'employeesController',
                 controllerAs: 'employeesCtrl'
-            })
-            .state('employees.create', {
-                url: 'create',
-                templateUrl: 'app/employees/views/addEmployee.html',
-                controller: 'addEmployeeController',
-                controllerAs: 'addEmployeeCtrl'
             });
 
         $urlRouterProvider.otherwise('/');

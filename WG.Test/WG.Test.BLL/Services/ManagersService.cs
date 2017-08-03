@@ -19,5 +19,15 @@ namespace WG.Test.BLL.Services
         {
             return await _managersRepository.GetAsync();
         }
+
+        public async Task<bool> CreateAsync(Manager manager)
+        {
+            return await _managersRepository.CreateAsync(manager);
+        }
+
+        public async Task<bool> DeleteAsync(int id)
+        {
+            return await _managersRepository.DeleteAsync(id);
+        }
     }
 }

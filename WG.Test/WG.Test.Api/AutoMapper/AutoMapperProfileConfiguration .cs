@@ -14,6 +14,7 @@ namespace WG.Test.Api.AutoMapper
         {
             CreateMap<Employee, EmployeeViewModel>();
             CreateMap<Manager, ManagerViewModel>();
+            CreateMap<ManagerViewModel, Manager>();
         }
     }
 }

@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Metadata;
 
-namespace WG.Test.Data.Migrations
+namespace WG.Test.BusinessEntities.Migrations
 {
-    public partial class Initial : Migration
+    public partial class fixfieldManagerIdinEmployeestable : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -32,7 +32,7 @@ namespace WG.Test.Data.Migrations
                         .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
                     Department = table.Column<string>(nullable: true),
                     FirstName = table.Column<string>(nullable: true),
-                    ManagerId = table.Column<int>(nullable: false),
+                    ManagerId = table.Column<int>(nullable: true),
                     MiddleName = table.Column<string>(nullable: true),
                     Position = table.Column<string>(nullable: true),
                     Surname = table.Column<string>(nullable: true)
@@ -45,7 +45,7 @@ namespace WG.Test.Data.Migrations
                         column: x => x.ManagerId,
                         principalTable: "Managers",
                         principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
+                        onDelete: ReferentialAction.Restrict);
                 });
 
             migrationBuilder.CreateIndex(

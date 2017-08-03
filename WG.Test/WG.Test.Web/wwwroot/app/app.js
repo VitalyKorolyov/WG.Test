@@ -3,5 +3,6 @@
 angular.module('app', [
     'ui.router',
     'employees',
-    'managers'
+    'managers',
+    'createManager'
 ]).config(function () {}).run(function () {});

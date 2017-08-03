@@ -4,6 +4,7 @@ using AutoMapper;
 using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Mvc;
 using WG.Test.Api.Models;
+using WG.Test.BusinessEntities.Entities;
 using WG.Test.IBLL.Interfaces;
 
 namespace WG.Test.Api.Controllers
@@ -28,25 +29,30 @@ namespace WG.Test.Api.Controllers
             return _mapper.Map<List<ManagerViewModel>>(managers);
         }
 
-        [HttpGet("{id}")]
-        public string Get(int id)
+        [HttpPost("create")]
+        public async Task<IActionResult> Create([FromBody]ManagerViewModel model)
         {
-            return "value";
+            var manager = _mapper.Map<Manager>(model);
+
+            var isSuccess = await _managersService.CreateAsync(manager);
+            if(isSuccess)
+            {
+                return new OkResult();
+            }
+
+            return new BadRequestResult();
         }
 
-        [HttpPost]
-        public void Post([FromBody]string value)
+        [HttpDelete("delete/{id}")]
+        public async Task<IActionResult> Delete(int id)
         {
-        }
+            var isSuccess = await _managersService.DeleteAsync(id);
+            if (isSuccess)
+            {
+                return new OkResult();
+            }
 
-        [HttpPut("{id}")]
-        public void Put(int id, [FromBody]string value)
-        {
-        }
-
-        [HttpDelete("{id}")]
-        public void Delete(int id)
-        {
+            return new BadRequestResult();
         }
     }
 }

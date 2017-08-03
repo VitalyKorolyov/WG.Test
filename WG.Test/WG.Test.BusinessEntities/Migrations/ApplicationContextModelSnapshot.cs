@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
 using WG.Test.BusinessEntities;
 
-namespace WG.Test.Data.Migrations
+namespace WG.Test.BusinessEntities.Migrations
 {
     [DbContext(typeof(ApplicationContext))]
     partial class ApplicationContextModelSnapshot : ModelSnapshot
@@ -25,7 +25,7 @@ namespace WG.Test.Data.Migrations
 
                     b.Property<string>("FirstName");
 
-                    b.Property<int>("ManagerId");
+                    b.Property<int?>("ManagerId");
 
                     b.Property<string>("MiddleName");
 
@@ -60,8 +60,7 @@ namespace WG.Test.Data.Migrations
                 {
                     b.HasOne("WG.Test.BusinessEntities.Entities.Manager", "Manager")
                         .WithMany("Employees")
-                        .HasForeignKey("ManagerId")
-                        .OnDelete(DeleteBehavior.Cascade);
+                        .HasForeignKey("ManagerId");
                 });
         }
     }

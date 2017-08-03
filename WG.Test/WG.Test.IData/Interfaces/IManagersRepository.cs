@@ -7,5 +7,7 @@ namespace WG.Test.IData.Interfaces
     public interface IManagersRepository
     {
         Task<List<Manager>> GetAsync();
+        Task<bool> CreateAsync(Manager manager);
+        Task<bool> DeleteAsync(int id);
     }
 }

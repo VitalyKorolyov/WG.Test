@@ -1,15 +1,13 @@
 ﻿"use strict";
 
 angular.module('managers', ['ui.router'])
-    .config(function ($stateProvider, $urlRouterProvider) {
+    .config(function ($stateProvider) {
         $stateProvider
             .state('managers',
             {
-                url: '/',
+                url: '/managers',
                 templateUrl: 'app/managers/views/managers.html',
                 controller: 'managersController',
                 controllerAs: 'managersCtrl'
             });
-
-        $urlRouterProvider.otherwise('/');
     });

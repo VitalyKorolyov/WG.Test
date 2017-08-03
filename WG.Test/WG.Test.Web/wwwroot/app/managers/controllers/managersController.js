@@ -7,4 +7,10 @@ angular.module('managers').controller('managersController', ["$state", "managers
         managersService.getAll().then(function (managers) {
             ctrl.managers = managers;
         });
+
+        ctrl.delete = function (id, index) {
+            managersService.delete(id).then(function() {
+                ctrl.managers.splice(index, 1);
+            });
+        }
     }]);

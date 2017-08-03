@@ -5,11 +5,11 @@ using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
 using WG.Test.BusinessEntities;
 
-namespace WG.Test.Data.Migrations
+namespace WG.Test.BusinessEntities.Migrations
 {
     [DbContext(typeof(ApplicationContext))]
-    [Migration("20170803133448_Initial")]
-    partial class Initial
+    [Migration("20170803181332_fix field ManagerId in Employees table")]
+    partial class fixfieldManagerIdinEmployeestable
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -26,7 +26,7 @@ namespace WG.Test.Data.Migrations
 
                     b.Property<string>("FirstName");
 
-                    b.Property<int>("ManagerId");
+                    b.Property<int?>("ManagerId");
 
                     b.Property<string>("MiddleName");
 
@@ -61,8 +61,7 @@ namespace WG.Test.Data.Migrations
                 {
                     b.HasOne("WG.Test.BusinessEntities.Entities.Manager", "Manager")
                         .WithMany("Employees")
-                        .HasForeignKey("ManagerId")
-                        .OnDelete(DeleteBehavior.Cascade);
+                        .HasForeignKey("ManagerId");
                 });
         }
     }

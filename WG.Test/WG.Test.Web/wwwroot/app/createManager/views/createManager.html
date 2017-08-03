@@ -1,0 +1,20 @@
+﻿<div class="panel">
+    <div class="page-header">
+        <h3> Create manager </h3>
+    </div>
+    <div class="form-group col-md-4">
+        <label>First name:</label>
+        <input ng-model="createManagerCtrl.manager.firstName" type="text" class="form-control">
+    </div>
+    <div class="form-group col-md-4">
+        <label>Surname:</label>
+        <input ng-model="createManagerCtrl.manager.surname" type="text" class="form-control">
+    </div>
+    <div class="form-group col-md-4">
+        <label>Middle name:</label>
+        <input ng-model="createManagerCtrl.manager.middleName" type="text" class="form-control">
+    </div>
+    <div class="col-md-12">
+        <button type="submit" ng-click="createManagerCtrl.create()" class="btn btn-default">Submit</button>
+    </div>
+</div>

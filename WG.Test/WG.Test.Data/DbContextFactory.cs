@@ -19,7 +19,7 @@ namespace WG.Test.Data
             var connectionString = configuration.GetConnectionString("DefaultConnection");
 
             var builder = new DbContextOptionsBuilder<ApplicationContext>();
-            builder.UseSqlServer(connectionString, x => x.MigrationsAssembly("WG.Test.Data"));
+            builder.UseSqlServer(connectionString, x => x.MigrationsAssembly("WG.Test.BusinessEntities"));
 
             return new ApplicationContext(builder.Options);
         }

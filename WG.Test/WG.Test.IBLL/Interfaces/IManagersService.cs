@@ -7,5 +7,7 @@ namespace WG.Test.IBLL.Interfaces
     public interface IManagersService
     {
         Task<List<Manager>> GetAsync();
+        Task<bool> CreateAsync(Manager manager);
+        Task<bool> DeleteAsync(int id);
     }
 }

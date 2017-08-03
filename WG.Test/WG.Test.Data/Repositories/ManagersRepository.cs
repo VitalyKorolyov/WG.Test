@@ -20,5 +20,23 @@ namespace WG.Test.Data.Repositories
         {
             return await _dbContext.Managers.ToListAsync();
         }
+
+        public async Task<bool> CreateAsync(Manager manager)
+        {
+            await _dbContext.Managers.AddAsync(manager);
+            var number = await _dbContext.SaveChangesAsync();
+
+            return number != 0;
+        }
+
+        public async Task<bool> DeleteAsync(int id)
+        {
+            var manager = new Manager { Id = id };
+            _dbContext.Entry(manager).State = EntityState.Deleted;
+
+            var number = await _dbContext.SaveChangesAsync();
+
+            return number != 0;
+        }
     }
 }

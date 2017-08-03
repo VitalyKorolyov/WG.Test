@@ -12,6 +12,13 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Content Include="wwwroot\app\createManager\controllers\createManagerController.js">
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="wwwroot\app\createManager\module.js">
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="wwwroot\app\createManager\views\createManager.html" />
     <Content Include="wwwroot\app\employees\controllers\addEmployeeController.js" />
     <Content Include="wwwroot\app\employees\views\addEmployee.html" />
     <Content Include="wwwroot\app\managers\controllers\managersController.js">

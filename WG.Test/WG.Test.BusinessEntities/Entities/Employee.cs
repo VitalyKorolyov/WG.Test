@@ -9,7 +9,7 @@
         public string Position { get; set; }
         public string Department { get; set; }
 
-        public int ManagerId { get; set; }
+        public int? ManagerId { get; set; }
         public Manager Manager { get; set; }
     }
 }

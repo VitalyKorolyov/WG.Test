@@ -19,7 +19,7 @@ namespace WG.Test.BusinessEntities
             modelBuilder.Entity<Employee>()
                 .HasOne(p => p.Manager)
                 .WithMany(t => t.Employees)
-                .HasForeignKey(p => p.ManagerId);
+                .HasForeignKey(p => p.ManagerId).IsRequired(false);
         }
     }
 }
