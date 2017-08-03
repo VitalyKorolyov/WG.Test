@@ -4,7 +4,7 @@ angular.module('app').factory('http', ['$http', '$q',
     function ($http, $q) {
 
         function buildUrl(url) {
-            return "" + url;
+            return "http://localhost:5000/api/" + url;
         }
 
         function handleErrors(response) {

@@ -6,16 +6,28 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
 </head>
 <body ng-app="app">
-    <nav class="navbar navbar-inverse" role="navigation">
-        <div class="navbar-header">
-            <a class="navbar-brand" ui-sref="users">Test task</a>
-        </div>
-    </nav>
-    <script src="build/vendor.js"></script>
-    <script src="build/app.js"></script>
-
-    <div class="container">
-        <div ui-view></div>
+<nav class="navbar navbar-inverse" role="navigation">
+    <div class="navbar-header">
+        <a class="navbar-brand" ui-sref="employees">Test task</a>
     </div>
+</nav>
+<script src="build/vendor.js"></script>
+<script src="build/app.js"></script>
+
+<div class="container-fluid">
+    <div class="row-fluid">
+        <div class="col-md-3">
+            <div class="well sidebar-nav">
+                <ul class="nav nav-list">
+                    <li><a ui-sref="employees">Employees</a></li>
+                    <li><a ui-sref="managers">Managers</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="col-md-9">
+            <div ui-view></div>
+        </div>
+    </div>
+</div>
 </body>
 </html>

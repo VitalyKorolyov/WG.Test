@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using System.IO;
 using Microsoft.AspNetCore.Hosting;
 
 namespace WG.Test.Web
@@ -14,9 +10,9 @@ namespace WG.Test.Web
             var host = new WebHostBuilder()
                 .UseKestrel()
                 .UseContentRoot(Directory.GetCurrentDirectory())
-                .UseIISIntegration()
                 .UseStartup<Startup>()
                 .UseApplicationInsights()
+                .UseUrls("http://localhost:8080/")
                 .Build();
 
             host.Run();

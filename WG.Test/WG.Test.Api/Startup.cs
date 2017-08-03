@@ -25,6 +25,14 @@ namespace WG.Test.Api
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc();
+            services.AddCors(options =>
+            {
+                options.AddPolicy("CorsPolicy",
+                    builder => builder.AllowAnyOrigin()
+                    .AllowAnyMethod()
+                    .AllowAnyHeader()
+                    .AllowCredentials());
+            });
 
             var connectionString = Configuration.GetConnectionString("DefaultConnection");
             services.ConfigureDb(connectionString);
@@ -38,6 +46,7 @@ namespace WG.Test.Api
             loggerFactory.AddDebug();
 
             app.UseMvc();
+            app.UseCors("CorsPolicy");
         }
     }
 }

@@ -2,5 +2,6 @@
 
 angular.module('app', [
     'ui.router',
-    'employees'
+    'employees',
+    'managers'
 ]).config(function () {}).run(function () {});

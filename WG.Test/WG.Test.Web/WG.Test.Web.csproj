@@ -5,27 +5,30 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Content Include="wwwroot\.bowerrc" />
-    <Content Include="wwwroot\.gulpfilerc" />
-    <Content Include="wwwroot\.packagerc" />
-    <Content Include="wwwroot\bower.json" />
+    <Compile Remove="wwwroot\src\**" />
+    <Content Remove="wwwroot\src\**" />
+    <EmbeddedResource Remove="wwwroot\src\**" />
+    <None Remove="wwwroot\src\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="wwwroot\app\employees\controllers\addEmployeeController.js" />
+    <Content Include="wwwroot\app\employees\views\addEmployee.html" />
+    <Content Include="wwwroot\app\managers\controllers\managersController.js">
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="wwwroot\app\managers\module.js">
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="wwwroot\app\managers\views\managers.html" />
+    <Content Include="wwwroot\app\services\employeesService.js" />
     <Content Include="wwwroot\build\app.js" />
     <Content Include="wwwroot\build\vendor.js" />
-    <Content Include="wwwroot\gulpfile.js" />
     <Content Include="wwwroot\index.html" />
-    <Content Include="wwwroot\package.json" />
-    <Content Include="wwwroot\src\app.scripts.json" />
-    <Content Include="wwwroot\src\app\app.js" />
-    <Content Include="wwwroot\src\app\employees\controllers\employeesController.js" />
-    <Content Include="wwwroot\src\app\employees\module.js" />
-    <Content Include="wwwroot\src\app\employees\views\employees.html" />
-    <Content Include="wwwroot\src\app\services\http.js" />
-    <Content Include="wwwroot\src\index.html" />
   </ItemGroup>
 
   <ItemGroup>
     <Folder Include="wwwroot\build\" />
-    <Folder Include="wwwroot\src\lib\" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Microsoft.ApplicationInsights.AspNetCore" Version="2.0.0" />

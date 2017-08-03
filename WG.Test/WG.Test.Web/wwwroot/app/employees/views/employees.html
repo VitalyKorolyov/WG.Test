@@ -1,25 +1,32 @@
 ﻿<div class="panel">
     <div class="page-header">
-        <h1> Students </h1>
+        <h3> Employees </h3>
     </div>
-    <div class="panel">
-        <div class="form-inline">
-            <table class="table table-hover">
-                <thead>
-                    <tr>
-                        <th>Id</th>
-                        <th>Full name</th>
-                        <th></th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>dfg</td>
-                        <td>dfg</td>
-                        <th><button type="button" class="btn btn-danger btn-sm">Delete</button></th>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
+    <button type="button" ng-click="employeesCtrl.create()" class="btn btn-default">Add employee</button>
+    <div class="form-inline">
+        <table class="table table-hover">
+            <thead>
+            <tr>
+                <th>First Name</th>
+                <th>Surname</th>
+                <th>Middle Name</th>
+                <th>Middle Name</th>
+                <th>Department</th>
+                <th>Manager</th>
+                <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr ng-repeat="employee in employeesCtrl.employees">
+                <td>{{employee.firstName}}</td>
+                <td>{{employee.surname}}</td>
+                <td>{{employee.middleName}}</td>
+                <td>{{employee.position}}</td>
+                <td>{{employee.department}}</td>
+                <td>{{employee.manager.firstName}} {{employee.manager.surname}}</td>
+                <th><button type="button" class="btn btn-danger btn-sm">Delete</button></th>
+            </tr>
+            </tbody>
+        </table>
     </div>
 </div>

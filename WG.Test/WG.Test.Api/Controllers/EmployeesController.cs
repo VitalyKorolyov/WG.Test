@@ -1,13 +1,14 @@
 ﻿using System.Collections.Generic;
 using System.Threading.Tasks;
 using AutoMapper;
+using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Mvc;
 using WG.Test.Api.Models;
-using WG.Test.BLL.Services;
 using WG.Test.IBLL.Interfaces;
 
 namespace WG.Test.Api.Controllers
 {
+    [EnableCors("CorsPolicy")]
     [Route("api/[controller]")]
     public class EmployeesController : Controller
     {
