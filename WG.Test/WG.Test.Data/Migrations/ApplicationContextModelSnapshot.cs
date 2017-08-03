@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
-using WG.Test.Data;
+using WG.Test.BusinessEntities;
 
 namespace WG.Test.Data.Migrations
 {
@@ -16,7 +16,7 @@ namespace WG.Test.Data.Migrations
                 .HasAnnotation("ProductVersion", "1.1.2")
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-            modelBuilder.Entity("WG.Test.Data.Entities.Employee", b =>
+            modelBuilder.Entity("WG.Test.BusinessEntities.Entities.Employee", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd();
@@ -40,7 +40,7 @@ namespace WG.Test.Data.Migrations
                     b.ToTable("Employees");
                 });
 
-            modelBuilder.Entity("WG.Test.Data.Entities.Manager", b =>
+            modelBuilder.Entity("WG.Test.BusinessEntities.Entities.Manager", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd();
@@ -56,9 +56,9 @@ namespace WG.Test.Data.Migrations
                     b.ToTable("Managers");
                 });
 
-            modelBuilder.Entity("WG.Test.Data.Entities.Employee", b =>
+            modelBuilder.Entity("WG.Test.BusinessEntities.Entities.Employee", b =>
                 {
-                    b.HasOne("WG.Test.Data.Entities.Manager", "Manager")
+                    b.HasOne("WG.Test.BusinessEntities.Entities.Manager", "Manager")
                         .WithMany("Employees")
                         .HasForeignKey("ManagerId")
                         .OnDelete(DeleteBehavior.Cascade);

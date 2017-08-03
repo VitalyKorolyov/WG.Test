@@ -1,7 +1,6 @@
 ﻿using AutoMapper;
 using WG.Test.Api.Models;
-using WG.Test.BLL.Models;
-using WG.Test.Data.Entities;
+using WG.Test.BusinessEntities.Entities;
 
 namespace WG.Test.Api.AutoMapper
 {
@@ -13,10 +12,8 @@ namespace WG.Test.Api.AutoMapper
 
         protected AutoMapperProfileConfiguration(string profileName) :base(profileName)
         {
-            CreateMap<Employee, EmployeeModel>();
-            CreateMap<Manager, ManagerModel>();
-            CreateMap<EmployeeModel, EmployeeViewModel>();
-            CreateMap<ManagerModel, ManagerViewModel>();
+            CreateMap<Employee, EmployeeViewModel>();
+            CreateMap<Manager, ManagerViewModel>();
         }
     }
 }

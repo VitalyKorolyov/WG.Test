@@ -1,7 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using WG.Test.BusinessEntities.Entities;
 
-namespace WG.Test.Data
+namespace WG.Test.BusinessEntities
 {
     public class ApplicationContext : DbContext
     {

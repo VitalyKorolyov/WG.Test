@@ -2,6 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.Extensions.Configuration;
+using WG.Test.BusinessEntities;
 
 namespace WG.Test.Data
 {
@@ -15,10 +16,10 @@ namespace WG.Test.Data
                 .AddEnvironmentVariables();
 
             var configuration = configurator.Build();
+            var connectionString = configuration.GetConnectionString("DefaultConnection");
 
             var builder = new DbContextOptionsBuilder<ApplicationContext>();
-            builder.UseSqlServer(
-                "Data Source=DESKTOP-62OCN16\\KOROLEV;Initial Catalog=WG;Integrated Security=True;MultipleActiveResultSets=true");
+            builder.UseSqlServer(connectionString, x => x.MigrationsAssembly("WG.Test.Data"));
 
             return new ApplicationContext(builder.Options);
         }
