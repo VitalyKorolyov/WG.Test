@@ -7,5 +7,6 @@ namespace WG.Test.IData.Interfaces
     public interface IEmployeesRepository
     {
         Task<List<Employee>> GetAsync();
+        Task<bool> CreateAsync(Employee employee);
     }
 }

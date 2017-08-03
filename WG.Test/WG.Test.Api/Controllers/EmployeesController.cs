@@ -4,6 +4,7 @@ using AutoMapper;
 using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Mvc;
 using WG.Test.Api.Models;
+using WG.Test.BusinessEntities.Entities;
 using WG.Test.IBLL.Interfaces;
 
 namespace WG.Test.Api.Controllers
@@ -35,9 +36,18 @@ namespace WG.Test.Api.Controllers
             return "value";
         }
 
-        [HttpPost]
-        public void Create([FromBody]string value)
+        [HttpPost("create")]
+        public async Task<IActionResult> Create([FromBody]EmployeeViewModel model)
         {
+            var employee = _mapper.Map<Employee>(model);
+
+            var isSuccess = await _employeesService.CreateAsync(employee);
+            if (isSuccess)
+            {
+                return new OkResult();
+            }
+
+            return new BadRequestResult();
         }
 
         [HttpPost("{id}")]

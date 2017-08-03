@@ -19,5 +19,13 @@ namespace WG.Test.Data.Repositories
         {
             return await _dbContext.Employees.Include("Manager").ToListAsync();
         }
+
+        public async Task<bool> CreateAsync(Employee employee)
+        {
+            await _dbContext.Employees.AddAsync(employee);
+            var number = await _dbContext.SaveChangesAsync();
+
+            return number != 0;
+        }
     }
 }

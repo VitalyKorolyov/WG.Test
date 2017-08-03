@@ -7,5 +7,6 @@ namespace WG.Test.IBLL.Interfaces
     public interface IEmployeesService
     {
         Task<List<Employee>> GetAsync();
+        Task<bool> CreateAsync(Employee employee);
     }
 }

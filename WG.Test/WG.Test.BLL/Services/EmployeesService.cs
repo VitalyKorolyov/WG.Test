@@ -19,5 +19,10 @@ namespace WG.Test.BLL.Services
         {
             return await _employeeRepository.GetAsync();
         }
+
+        public async Task<bool> CreateAsync(Employee employee)
+        {
+            return await _employeeRepository.CreateAsync(employee);
+        }
     }
 }
