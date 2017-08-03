@@ -8,22 +8,22 @@ gulp.task('default', ['build', 'vendor']);
 var source = {
     js: {
         src: [
-            'src/app/app.js',
-            'src/app/**/module.js',
-            'src/app/**/!(module)*.js'
+            'wwwroot/app/app.js',
+            'wwwroot/app/**/module.js',
+            'wwwroot/app/**/!(module)*.js'
         ]
     }
 };
 
-var scripts = require('./src/app.scripts.json');
+var scripts = require('./wwwroot/app.scripts.json');
 
 var destinations = {
-    js: 'src/build'
+    js: 'wwwroot/build'
 };
 
 gulp.task('connect', function () {
     connect.server({
-        root: 'src'
+        root: 'wwwroot'
     });
 });
 
@@ -36,7 +36,7 @@ gulp.task('build', function () {
 gulp.task('vendor', function () {
     var paths = [];
     scripts.preBuild.forEach(function (script) {
-        paths.push('src/' + scripts.paths[script]);
+        paths.push('wwwroot/' + scripts.paths[script]);
     });
     gulp.src(paths)
         .pipe(concat('vendor.js'))

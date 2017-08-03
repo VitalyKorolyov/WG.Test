@@ -1,5 +1,6 @@
 ﻿'use strict';
 
 angular.module('app', [
-    'ui.router'
+    'ui.router',
+    'employees'
 ]).config(function () {}).run(function () {});
